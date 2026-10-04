@@ -1,0 +1,190 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+/* Common styles */
+@import url('./reset.css');
+@import url('./base.css');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 36px 24px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.form input {
+  width: 272px;
+  height: 40px;
+  padding: 0 16px;
+
+  border: 1px solid #808080;
+  border-radius: 4px;
+
+  font-size: 16px;
+  outline: none;
+}
+
+.form input:hover {
+  border-color: #000000;
+}
+
+.form input:focus {
+  border-color: #4e75ff;
+}
+
+.form button {
+  height: 40px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #4e75ff;
+  color: #ffffff;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: background-color 250ms ease;
+}
+
+.form button:hover {
+  background-color: #6c8cff;
+}
+
+/* Gallery */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 0;
+
+  list-style: none;
+}
+
+.gallery-item {
+  overflow: hidden;
+
+  border: 1px solid #808080;
+  border-radius: 4px;
+
+  background-color: #ffffff;
+}
+
+.gallery-link {
+  display: block;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.gallery-image {
+  display: block;
+
+  width: 100%;
+  height: 200px;
+
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 8px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 12px;
+}
+
+.info-title {
+  font-weight: 600;
+}
+
+/* Loader */
+
+.loader {
+  display: none;
+
+  width: 48px;
+  height: 48px;
+
+  margin: 40px auto;
+
+  border: 5px solid #e7e9fc;
+  border-top-color: #4e75ff;
+  border-radius: 50%;
+
+  animation: loader-spin 1s linear infinite;
+}
+
+.loader.is-visible {
+  display: block;
+}
+
+@keyframes loader-spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tablet */
+
+@media screen and (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 24px 16px;
+  }
+
+  .form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form input {
+    width: 100%;
+  }
+
+  .form button {
+    width: 100%;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
