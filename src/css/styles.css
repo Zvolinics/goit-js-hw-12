@@ -188,3 +188,29 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.load-more {
+  display: block;
+
+  margin: 32px auto 0;
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #4e75ff;
+  color: #ffffff;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: background-color 250ms ease;
+}
+
+.load-more:hover {
+  background-color: #6c8cff;
+}
+
+.is-hidden {
+  display: none;
+}
